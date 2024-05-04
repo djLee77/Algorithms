@@ -2,5 +2,5 @@
 
 ### 문제는 백준 온라인 저지 사이트 기반이며, 파일의 번호는 해당 사이트의 문제 번호입니다.
 
-solved.ac 계정
-- https://solved.ac/profile/eowns1111
+### solved.ac 계정
+https://solved.ac/profile/eowns1111
