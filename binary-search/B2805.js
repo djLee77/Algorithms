@@ -1,11 +1,12 @@
-const fs = require("fs");
+//나무 자르기
+const fs = require('fs');
 
 const [[N, M], heightOfTrees] = fs
-  .readFileSync("../input.txt")
+  .readFileSync('../input.txt')
   .toString()
   .trim()
-  .split("\n")
-  .map((item) => item.split(" ").map((v) => +v));
+  .split('\n')
+  .map((item) => item.split(' ').map((v) => +v));
 
 heightOfTrees.sort((a, b) => a - b);
 

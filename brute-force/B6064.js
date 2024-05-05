@@ -1,11 +1,12 @@
-const fs = require("fs");
+//카잉 달력
+const fs = require('fs');
 
 const [[T], ...arr] = fs
-  .readFileSync("../input.txt")
+  .readFileSync('../input.txt')
   .toString()
   .trim()
-  .split("\n")
-  .map((item) => item.split(" ").map((v) => +v));
+  .split('\n')
+  .map((item) => item.split(' ').map((v) => +v));
 
 const getGCD = (a, b) => {
   let x = Math.max(a, b);
@@ -32,9 +33,9 @@ const solve = ([M, N, x, y]) => {
   return -1;
 };
 
-let output = "";
+let output = '';
 for (let i = 0; i < T; i++) {
-  output += solve(arr[i]) + "\n";
+  output += solve(arr[i]) + '\n';
 }
 
 console.log(output);

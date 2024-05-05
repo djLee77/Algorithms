@@ -1,3 +1,4 @@
+//최소 스패닝 트리
 const fs = require('fs');
 
 class unionFind {

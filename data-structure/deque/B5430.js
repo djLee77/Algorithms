@@ -1,6 +1,7 @@
-const fs = require("fs");
+//AC
+const fs = require('fs');
 
-const TC = fs.readFileSync("../input.txt").toString().trim().split("\n");
+const TC = fs.readFileSync('../input.txt').toString().trim().split('\n');
 
 const T = +TC.shift();
 
@@ -10,11 +11,11 @@ const AC = (cmds, arr) => {
   let reverse = false;
 
   for (let cmd of cmds) {
-    if (cmd === "R") {
+    if (cmd === 'R') {
       reverse = !reverse;
-    } else if (cmd === "D") {
+    } else if (cmd === 'D') {
       if (left === right) {
-        return "error";
+        return 'error';
       }
       if (reverse) {
         right--;
@@ -35,24 +36,20 @@ const AC = (cmds, arr) => {
     }
   }
 
-  return `[${result.join(",")}]`;
+  return `[${result.join(',')}]`;
 };
 
-let output = "";
+let output = '';
 
 for (let i = 0; i < T * 3; i += 3) {
-  const cmds = TC[i].replace(/\r/, "").split("");
+  const cmds = TC[i].replace(/\r/, '').split('');
   let arr;
-  if (TC[i + 2] === "[]") {
+  if (TC[i + 2] === '[]') {
     arr = [];
   } else {
-    arr = TC[i + 2]
-      .replace("[", "")
-      .replace("]", "")
-      .split(",")
-      .map(Number);
+    arr = TC[i + 2].replace('[', '').replace(']', '').split(',').map(Number);
   }
-  output += AC(cmds, arr) + "\n";
+  output += AC(cmds, arr) + '\n';
 }
 
 console.log(output);

@@ -1,10 +1,11 @@
-const fs = require("fs");
+//단지번호붙이기
+const fs = require('fs');
 
-const input = fs.readFileSync("../input.txt").toString().trim().split("\n");
+const input = fs.readFileSync('../input.txt').toString().trim().split('\n');
 
 const N = Number(input.shift());
 
-const map = input.map((item) => item.split("").map((v) => +v));
+const map = input.map((item) => item.split('').map((v) => +v));
 
 let bfsVisited = Array.from(Array(N), () => Array(N).fill(false));
 

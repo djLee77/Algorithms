@@ -1,3 +1,4 @@
+//K번째 수
 const fs = require('fs');
 
 const [n, k] = fs

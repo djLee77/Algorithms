@@ -1,3 +1,4 @@
+//유기농 배추
 const fs = require('fs');
 
 const [[T], ...input] = fs

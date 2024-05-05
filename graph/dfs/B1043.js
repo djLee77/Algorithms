@@ -1,11 +1,12 @@
-const fs = require("fs");
+//거짓말
+const fs = require('fs');
 
 const [[N, M], startNodes, ...map] = fs
-  .readFileSync("../input.txt")
+  .readFileSync('../input.txt')
   .toString()
   .trim()
-  .split("\n")
-  .map((item) => item.split(" ").map((v) => +v));
+  .split('\n')
+  .map((item) => item.split(' ').map((v) => +v));
 
 startNodes.shift();
 map.map((item) => item.shift());
@@ -31,12 +32,12 @@ const dfs = (node) => {
       dfsVisited[nextNode] = true;
       dfs(nextNode);
     }
-  })
+  });
 };
 
 startNodes.forEach((node) => {
   dfs(node);
-})
+});
 
 let cnt = 0;
 
@@ -47,6 +48,6 @@ map.forEach((partyPeople) => {
   }
 
   if (canSpeakLie) cnt++;
-})
+});
 
 console.log(cnt);

@@ -1,18 +1,23 @@
-let fs = require("fs");
-let input = fs.readFileSync("../input.txt").toString().trim().split("\n").map(item => item.replace(/\r/, ""));
+//트리 순회
+let fs = require('fs');
+let input = fs
+  .readFileSync('../input.txt')
+  .toString()
+  .trim()
+  .split('\n')
+  .map((item) => item.replace(/\r/, ''));
 
 const N = Number(input.shift());
 let result = '';
 
 const tree = {};
 for (let i = 0; i < N; i++) {
-  const [node, left, right] = input[i].split(" ");
+  const [node, left, right] = input[i].split(' ');
   tree[node] = [left, right];
 }
 
-
 function preorder(node) {
-  if (node === ".") return;
+  if (node === '.') return;
   const [left, right] = tree[node];
   result += node;
   preorder(left);
@@ -20,7 +25,7 @@ function preorder(node) {
 }
 
 function inorder(node) {
-  if (node === ".") return;
+  if (node === '.') return;
   const [left, right] = tree[node];
   inorder(left);
   result += node;
@@ -28,17 +33,17 @@ function inorder(node) {
 }
 
 function postorder(node) {
-  if (node === ".") return;
+  if (node === '.') return;
   const [left, right] = tree[node];
   postorder(left);
   postorder(right);
   result += node;
 }
 
-preorder("A");
-result += "\n";
-inorder("A");
-result += "\n";
-postorder("A");
+preorder('A');
+result += '\n';
+inorder('A');
+result += '\n';
+postorder('A');
 
 console.log(result);

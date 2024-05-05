@@ -1,23 +1,24 @@
-const fs = require("fs");
+//칸토어 집합
+const fs = require('fs');
 
 const input = fs
-  .readFileSync("../input.txt")
+  .readFileSync('../input.txt')
   .toString()
   .trim()
-  .split("\n")
+  .split('\n')
   .map((item) => +item);
 
-const lines = input.map((item) => Array(Math.pow(3, item)).fill("-").join(""));
+const lines = input.map((item) => Array(Math.pow(3, item)).fill('-').join(''));
 
 const recFunc = (line) => {
-  if (!line.includes("------")) {
-    return "- -";
+  if (!line.includes('------')) {
+    return '- -';
   }
 
   let cnt = line.length / 3;
-  let leftLine = Array(cnt).fill("-").join("");
+  let leftLine = Array(cnt).fill('-').join('');
   let rightLine = leftLine;
-  let middleTab = Array(cnt).fill(" ").join("");
+  let middleTab = Array(cnt).fill(' ').join('');
 
   leftLine = recFunc(leftLine);
   rightLine = recFunc(rightLine);
@@ -26,8 +27,8 @@ const recFunc = (line) => {
 };
 
 lines.forEach((line) => {
-  if (line === "-") {
-    console.log("-");
+  if (line === '-') {
+    console.log('-');
   } else {
     console.log(recFunc(line));
   }

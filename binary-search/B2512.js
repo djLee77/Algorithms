@@ -1,3 +1,4 @@
+//예산
 const fs = require('fs');
 
 const [[N], arr, [budget]] = fs

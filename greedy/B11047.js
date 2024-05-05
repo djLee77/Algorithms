@@ -1,10 +1,11 @@
-const fs = require("fs");
+//동전 0
+const fs = require('fs');
 
-let input = fs.readFileSync("../input.txt").toString().trim().split("\n");
+let input = fs.readFileSync('../input.txt').toString().trim().split('\n');
 
 let [N, V] = input
   .shift()
-  .split(" ")
+  .split(' ')
   .map((item) => +item);
 
 input = input.map((item) => +item);

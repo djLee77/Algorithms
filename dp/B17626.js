@@ -1,3 +1,4 @@
+//Four Squares
 const fs = require('fs');
 
 let N = +fs.readFileSync('../input.txt').toString().trim();

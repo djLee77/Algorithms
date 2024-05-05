@@ -1,9 +1,9 @@
-// 필요한 모듈 불러오기
-const fs = require("fs");
-const input = fs.readFileSync("../input.txt").toString().trim().split("\n");
+//쉬운 최단거리
+const fs = require('fs');
+const input = fs.readFileSync('../input.txt').toString().trim().split('\n');
 
-const [n, m] = input[0].split(" ").map(Number);
-const map = input.slice(1, n + 1).map((row) => row.split(" ").map(Number));
+const [n, m] = input[0].split(' ').map(Number);
+const map = input.slice(1, n + 1).map((row) => row.split(' ').map(Number));
 const visited = Array.from(Array(n), () => Array(m).fill(false));
 const distances = Array.from(Array(n), () => Array(m).fill(-1));
 
@@ -62,4 +62,9 @@ for (let i = 0; i < distances.length; i++) {
   }
 }
 
-console.log(distances.map((item) => item.join(" ")).join("\n").trim());
+console.log(
+  distances
+    .map((item) => item.join(' '))
+    .join('\n')
+    .trim()
+);

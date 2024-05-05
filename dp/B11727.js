@@ -1,6 +1,7 @@
-const fs = require("fs");
+//2xn 타일링2
+const fs = require('fs');
 
-let N = fs.readFileSync("../input.txt").toString().trim();
+let N = fs.readFileSync('../input.txt').toString().trim();
 
 const dp = {
   1: 1,

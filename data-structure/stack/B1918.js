@@ -1,3 +1,4 @@
+//후위 표기식
 const fs = require('fs');
 
 const input = fs

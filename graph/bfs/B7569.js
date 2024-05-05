@@ -1,3 +1,4 @@
+//토마토 (3차원)
 class Deque {
   constructor() {
     this.data = [];
@@ -27,14 +28,14 @@ class Deque {
 
 const queue = new Deque();
 
-const fs = require("fs");
+const fs = require('fs');
 
 let [[N, M, H], ...arr] = fs
-  .readFileSync("../input.txt")
+  .readFileSync('../input.txt')
   .toString()
   .trim()
-  .split("\n")
-  .map((item) => item.split(" ").map((v) => +v));
+  .split('\n')
+  .map((item) => item.split(' ').map((v) => +v));
 
 let map = [];
 let CH = H;

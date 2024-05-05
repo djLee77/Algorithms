@@ -1,3 +1,4 @@
+//트리의 부모 찾기
 const sol = (input) => {
   const N = +input[0];
   input = input.slice(1);

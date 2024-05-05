@@ -1,3 +1,4 @@
+//IOIOI
 function computePi(pattern) {
   const pi = Array(pattern.length).fill(0);
   let j = 0;
@@ -34,21 +35,21 @@ function KMP(S, pattern) {
 }
 
 function solve(N, M, S) {
-  let pattern = "I";
+  let pattern = 'I';
   for (let i = 0; i < N; i++) {
-    pattern += "OI";
+    pattern += 'OI';
   }
   return KMP(S, pattern);
 }
 
-const fs = require("fs");
+const fs = require('fs');
 
 const [N, M, S] = fs
-  .readFileSync("/dev/stdin")
+  .readFileSync('/dev/stdin')
   .toString()
   .trim()
-  .split("\n")
-  .map((item) => item.replace(/\r/, ""));
+  .split('\n')
+  .map((item) => item.replace(/\r/, ''));
 
 // 함수 호출
 console.log(solve(+N, +M, S)); // 결과값 출력
