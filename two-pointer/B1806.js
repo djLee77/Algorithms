@@ -1,3 +1,4 @@
+//부분합
 const fs = require('fs');
 
 // 입력 데이터 읽기
