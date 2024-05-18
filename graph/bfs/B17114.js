@@ -1,27 +1,38 @@
 //하이퍼 토마토
-class Deque {
+class Node {
+  constructor(value, next) {
+    this.value = value;
+    this.next = next;
+  }
+}
+
+class Queue {
   constructor() {
-    this.data = [];
-    this.offset = 0;
+    this.lastNode = null;
+    this.length = 0;
+    this.firstNode = null;
   }
 
-  push(item) {
-    this.data.push(item);
+  push(v) {
+    if (this.length === 0) {
+      this.firstNode = new Node(v, null);
+      this.lastNode = this.firstNode;
+    } else {
+      let newNode = new Node(v, null);
+      this.lastNode.next = newNode;
+      this.lastNode = newNode;
+    }
+    this.length++;
   }
 
   pop() {
-    if (this.data.length === 0) return undefined;
-    const item = this.data[this.offset];
-    this.offset++;
-    if (this.offset * 2 >= this.data.length) {
-      this.data = this.data.slice(this.offset);
-      this.offset = 0;
-    }
-    return item;
-  }
-
-  isEmpty() {
-    return this.offset >= this.data.length;
+    if (this.length === 0) return undefined;
+    let secondNode = this.firstNode.next;
+    let value = this.firstNode.value;
+    this.firstNode = secondNode;
+    if (this.length === 1) this.lastNode = null;
+    this.length--;
+    return value;
   }
 }
 
@@ -150,9 +161,9 @@ const directions = [
 
 let max_day = 0;
 const bfs = (start_indexes) => {
-  const queue = new Deque();
+  const queue = new Queue();
   start_indexes.forEach((index) => queue.push([...index]));
-  while (!queue.isEmpty()) {
+  while (queue.length > 0) {
     let [i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11] = queue.pop();
     directions.forEach(
       ([di1, di2, di3, di4, di5, di6, di7, di8, di9, di10, di11]) => {
