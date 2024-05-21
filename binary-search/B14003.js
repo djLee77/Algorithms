@@ -1,4 +1,4 @@
-//가장 긴 증가하는 부분 수열 2
+//가장 긴 증가하는 부분 수열 5
 const fs = require('fs');
 const [[N], arr] = fs
   .readFileSync('../input.txt')
