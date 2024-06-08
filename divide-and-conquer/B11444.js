@@ -1,3 +1,4 @@
+//피보나치 수 6
 const fs = require('fs');
 const mod = 1000000007n;
 const N = BigInt(fs.readFileSync('../input.txt').toString().trim());
